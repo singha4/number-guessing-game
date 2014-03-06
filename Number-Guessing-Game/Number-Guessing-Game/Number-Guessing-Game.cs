@@ -10,21 +10,24 @@ namespace Number_Guessing_Game
         static void Main(string[] args)
         {
             string input;
-            int h = 100, l = 0 , e, guess = 50;
+            int high = 100, low = 0 , e, guess;
             while (true)
             {
-
-                guess = 50;
+                guess = (high + low) / 2;
                 Console.WriteLine("Is your guess higher, lower, or equal to {0}?", guess);
-
                 input = Console.ReadLine();
                 if (input == "h")
                 {
-                    guess = guess + 25;                   
+                    low = guess + 1;
                 }
                 else if (input == "l")
                 {
-                    guess = 25;
+                    high = guess - 1;   
+                    
+                }
+                else if (input == "e")
+                {
+                    break;
                 }
             }
         }
